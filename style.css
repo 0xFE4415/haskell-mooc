@@ -1,10 +1,12 @@
 body {
   margin: 0 0 0 0;
-  padding-left: 5%;
   font-family: sans-serif;
   background: #fffad1;
   color: #211c00;
   /*background: url("chevron.png") repeat;*/
+}
+div#text-container {
+  padding-left: 5%
 }
 a[href] {
   color: black;
@@ -111,10 +113,18 @@ ol.quiz li:hover code {
   background: inherit;
 }
 ol.quiz li:active {
-  background: red;
+  background: salmon;
+}
+ol.quiz li:active::after {
+  background: salmon;
+  content: "✘";
 }
 ol.quiz li.correct:active {
-  background: green;
+  background: yellowgreen;
+}
+ol.quiz li.correct:active::after {
+  background: yellowgreen;
+  content: "✔";
 }
 pre {
   border-radius: 5px;
@@ -140,4 +150,11 @@ table, img {
 }
 table {
   border-spacing: 1em 0em;
+}
+/* Fixes iOS font sizing anomaly */
+code {
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }

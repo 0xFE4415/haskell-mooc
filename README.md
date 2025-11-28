@@ -6,9 +6,9 @@ University of Helsinki
 
 [Course page](https://haskell.mooc.fi)
 
-[![License: CC BY-SA 4.0](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommonse.org/licenses/by-sa/4.0/)
+[![License: CC BY-SA 4.0](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## About the course
 
@@ -16,7 +16,7 @@ This is an online course on Functional Programming that uses the
 Haskell programming language. You can study at your own pace. All the
 material and exercises are openly available.
 
-The course is inteded to be followed through the [Course
+The course is intended to be followed through the [Course
 page](https://haskell.mooc.fi), but in case the course page is down or
 you want an offline backup, the course material is also available in
 this repository ([part1.html](part1.html), [part2.html](part2.html)).
@@ -49,6 +49,14 @@ Here are some fixes for common problems with `stack build`:
 
 - If you get an error like `While building package zlib-0.6.2.3`, you need to install the zlib library headers. The right command for Ubuntu is `sudo apt install zlib1g-dev`.
 - If you get an error like `Downloading lts-18.18 build plan ... RedownloadInvalidResponse`, your version of stack is too old. Run `stack upgrade` to get a newer one.
+
+### Newer GHC version
+
+If you need to use a newer version of GHC, perhaps to get
+vscode-haskell to work, try the `ghc-9.6.6` branch of this repository
+for GHC 9.6.6. The default for the course is GHC 9.2.8 for now.
+
+Don't forget to run `stack build` again after changing branches.
 
 ## Reporting errors
 

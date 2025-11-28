@@ -134,6 +134,8 @@ sumsOf (x1 : x2 : xs) = x1 : sumsOf (x1 + x2 : xs)
 -- Examples:
 --   merge [1,3,5] [2,4,6] ==> [1,2,3,4,5,6]
 --   merge [1,1,6] [1,2]   ==> [1,1,1,2,6]
+--   merge [1,2,3,20] [7]  ==> [1,2,3,7,20]
+--   merge [1] [2,3,4,5,6] ==> [1,2,3,4,5,6]
 
 merge :: [Int] -> [Int] -> [Int]
 merge x [] = x
@@ -158,8 +160,8 @@ merge (x : xs) (y : ys) = if min x y == x then x : merge xs (y : ys) else y : me
 --   mymaximum (>) 0 [1,3,2] ==> 3
 --   mymaximum (>) 4 [1,3,2] ==> 4    -- initial value was biggest
 --   mymaximum (<) 4 [1,3,2] ==> 1    -- note changed biggerThan
---   mymaximum (\xs ys -> length xs > length ys) [] [[1,2],[3]]
---     ==> [1,2]
+--   mymaximum (\(a,b) (c,d) -> b > d) ("",0) [("Banana",7),("Mouse",8)]
+--     ==> ("Mouse",8)
 
 mymaximum :: (a -> a -> Bool) -> a -> [a] -> a
 mymaximum bigger initial [] = initial
